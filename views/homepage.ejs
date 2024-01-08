@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor's Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="offerbar" style="display: flex; justify-content: space-around;">
+        <div style="transform: translateY(10px)"><h4>Get up to 40% off on your favorite products!</h4></div>
+        
+        
+    </div>
+    <div id="navbar">
+        <div id="1" style="width: 80%;"><a href="/"><img src="/logo.png" alt="logo"  id="logo"></a></div>
+       
+        <div id="3" style="width: 20%;"><a href="/cart"><img src="/cart.png" alt="cart" id="cartIcon" /></a></div>
+    </div>
+    <div id="mainContent">
+     
+        <div><h2 style="font-size: 40px;">CATEGORIES</h2></div>
+        <div id="categories">
+            <%for(let i =0;i<category.length;i++){%>
+                <a href="/<%=category[i]%>"><div class="category" style="background-image: url(/images/cart.jpg);"><p><%=category[i]%></p> </div></a>
+                <%}%>
+            
+          
+        </div>
+    </div>
+</body>
+</html>

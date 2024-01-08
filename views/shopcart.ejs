@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your cart</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="offerbar">
+      <h4>Get up to 40% off on your favorite products!</h4>
+    </div>
+    <div id="navbar">
+      <div id="1" style="width: 80%;"><a href="/"><img src="/logo.png" alt="logo"  id="logo"></a></div>
+     
+      <div id="3" style="width: 20%;"><a href="/cart"><img src="/cart.png" alt="cart" id="cartIcon" /></a></div>
+  </div>
+    <div id="cartContent">
+      <div id="shopcart">
+        <% if(data){ %>
+        <div id="cartcost">
+            <div><h3>Item count: <%=count%></h3></div>
+            
+            <div><h3>Total: AED <%=total%> </h3> </div>
+            <div>  <button>Proceed to buy</button></div>
+
+        </div>
+      
+        <div id="cartItems">
+          
+
+          
+            <%data.forEach(e=>{%>
+                <div class="cartItem">
+                    <div class="cartdiv" style="width: 10%;">
+                        <img src="<%=e.image%>" alt="" class="cartimg">
+                    </div>
+                    <div style="width: 60%;">
+                        <p><%=e.title%></p>
+                        <p><%=e.description%></p>
+                        <a href="/delete/<%=e.id%>" style="text-decoration: none; color: black; text-decoration: underline; " >Delete</a>
+    
+                    </div>
+                    <div style="width: 10%;">
+                        <h3> <span style="font-size: 10px;">AED</span> <%=e.price%></h3>
+                    </div>
+                </div>
+                <%})%>
+                <%}%>
+        </div>
+        
+      </div>
+      <div id="recommended">
+         <%for(let i=0;i<3;i++){%>
+            <div id="reccprods">
+                <img src="<%=rec[i].image%>" alt="">
+                <p style="margin-bottom: -10%;"><%=rec[i].title%></p>
+                <div style="display: flex; justify-content: space-between;margin-bottom: -5%">
+                    <div><h4><span style="font-size: 10px;">AED</span> <%=rec[i].price%></h4></div>
+                    <div style="margin-right: 15%;"><h4 >⭐<%=rec[i].rating%> </h4></div>
+                </div>
+              
+                <form id="addToCartForm" action="/cart" method="post">
+                    <input type="hidden" name="proTitle" value="<%=rec[i].title%>">
+                    <button type="submit" style="padding: 5px 10px ; background-color: black; color: bisque; border-radius: 20px;">Add to cart</button> 
+                </form>
+            </div>
+        <%}%> 
+       
+        
+        
+      </div>
+    </div>
+   
+  </body>
+</html>
