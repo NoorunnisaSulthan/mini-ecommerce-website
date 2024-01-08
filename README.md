@@ -1,7 +1,7 @@
 
 # Mini E-commerce Website
 
-Welcome to my mini e-commerce website project! This project was developed using HTML, CSS, Node.js, Express.js, MongoDB, and EJS.
+Welcome to my mini e-commerce website project! This project was developed using HTML, CSS, Node.js, Express.js, MongoDB, and EJS. Watch the project demo here: https://www.youtube.com/watch?v=bqN0P4MNy1M
 
 ## Features
 
